@@ -1,0 +1,306 @@
+{
+  "common": {
+    "projectName": "C ADMIN",
+    "backHome": "返回首页",
+    "yesOrNo": {
+      "yes": "是",
+      "no": "否"
+    },
+    "gender": {
+      "male": "男",
+      "female": "女"
+    },
+    "userCenter": "个人中心",
+    "logout": "退出登录",
+    "logoutConfirm": "确认退出登录吗？",
+    "loading": "正在加载资源...",
+    "networkError": "网络异常，请稍后再试",
+    "expand": "展开",
+    "collapse": "收起",
+    "actions": "操作",
+    "search": "查询",
+    "reset": "重置",
+    "refresh": "刷新",
+    "create": "新建",
+    "edit": "编辑",
+    "save": "保存",
+    "delete": "删除",
+    "deleteConfirm": "确定删除吗？",
+    "batchDelete": "批量删除",
+    "batchDeleteConfirm": "确认要删除 {{count}} 条记录吗 ？",
+    "back": "返回",
+    "pleaseEnter": "请输入内容..."
+  },
+  "component": {
+    "chart": {
+      "common": {
+        "data": "数据",
+        "dataRatio": "数据占比"
+      },
+      "kline": {
+        "time": "时间",
+        "open": "开盘",
+        "close": "收盘",
+        "low": "最低",
+        "high": "最高"
+      }
+    }
+  },
+  "menu": {
+    "home": "首页",
+    "document": "文档",
+    "example": "组件示例",
+    "richTextExample": "富文本编辑器",
+    "dataTableExample": "数据表格",
+    "tableAutoHeightExample": "表格自适应高度",
+    "iconExample": "图标",
+    "clipboardExample": "剪贴板",
+    "pageTransferExample": "跨页面数据传输",
+    "chartExample": "图表",
+    "countToExample": "数字滚动",
+    "themeSwitchExample": "主题切换动画",
+    "exception": "异常页",
+    "exception403": "403",
+    "exception404": "404",
+    "exception500": "500",
+    "system": "系统设置",
+    "systemUser": "用户管理",
+    "systemRole": "角色管理",
+    "systemMenu": "菜单管理",
+    "systemApi": "接口管理",
+    "multiMenu": "多级菜单",
+    "multiMenu1": "多级菜单1",
+    "multiMenu2": "多级菜单2",
+    "multiMenu2_1": "多级菜单2-1",
+    "multiMenu2_2": "多级菜单2-2",
+    "multiMenu2_2_1": "多级菜单2-2-1",
+    "case": "功能案例",
+    "caseFile": "文件管理",
+    "caseVideo": "视频播放",
+    "about": "关于"
+  },
+  "page": {
+    "login": {
+      "userNamePlaceholder": "请输入用户名",
+      "passwordPlaceholder": "请输入密码",
+      "rememberMe": "记住我",
+      "forgotPassword": "忘记密码？",
+      "login": "登录"
+    },
+    "userCenter": {
+      "oldPassword": "旧密码",
+      "newPassword": "新密码",
+      "confirmPassword": "确认密码",
+      "success": "密码修改成功",
+      "rules": {
+        "oldPassword": "请输入旧密码",
+        "newPassword": "请输入新密码",
+        "confirmPassword": "请输入确认密码",
+        "passwordLength": "密码长度在6-16位之间",
+        "passwordNotMatch": "两次密码不一致"
+      }
+    },
+    "forbidden": {
+      "title": "403",
+      "subTitle": "抱歉，您没有权限访问该页面。"
+    },
+    "notFound": {
+      "title": "404",
+      "subTitle": "抱歉，您访问的页面不存在。"
+    },
+    "serverError": {
+      "title": "500",
+      "subTitle": "抱歉，服务器发生错误。"
+    },
+    "home": {
+      "hits": "访问量",
+      "tradingVolume": "成交量",
+      "tradingValue": "成交额",
+      "conversionRate": "转化率",
+      "sales": "销售额",
+      "lastYear": "去年",
+      "thisYear": "今年",
+      "January": "1月",
+      "February": "2月",
+      "March": "3月",
+      "April": "4月",
+      "May": "5月",
+      "June": "6月",
+      "July": "7月",
+      "August": "8月",
+      "September": "9月",
+      "October": "10月",
+      "November": "11月",
+      "December": "12月",
+      "salesDistribution": "销售分布",
+      "domesticMarket": "国内市场",
+      "asiaPacificMarket": "亚太市场",
+      "europeanMarket": "欧美市场",
+      "customerSatisfaction": "客户满意度",
+      "lastMonth": "上月",
+      "thisMonth": "本月"
+    },
+    "dataTableExample": {
+      "name": "姓名",
+      "age": "年龄",
+      "action": "操作",
+      "noticeTitle": "提示",
+      "noticeContent": "此页面为展示，具体增删改查逻辑实现请参考文档或 【系统设置】 模块中相关页面及代码",
+      "param": "参数{{count}}"
+    },
+    "tableAutoHeightExample": {
+      "name": "姓名",
+      "age": "年龄"
+    },
+    "pageTransferExample": {
+      "hobby": "爱好",
+      "hobbyOptions": {
+        "basketball": "篮球",
+        "football": "足球",
+        "badminton": "羽毛球",
+        "pingpong": "乒乓球",
+        "swimming": "游泳",
+        "running": "跑步",
+        "gym": "健身",
+        "reading": "读书"
+      },
+      "transfer": "传输数据",
+      "form": {
+        "name": "姓名",
+        "age": "年龄",
+        "gender": "性别",
+        "hobby": "爱好",
+        "button": "传参"
+      },
+      "transferred": "接收数据"
+    },
+    "chartExample": {
+      "title": "图表",
+      "barChart": "柱状图",
+      "lineChart": "折线图",
+      "ringChart": "环形图",
+      "radarChart": "雷达图",
+      "scatterChart": "散点图",
+      "kLineChart": "K线图",
+      "domesticMarket": "国内市场",
+      "asiaPacificMarket": "亚太市场",
+      "europeanMarket": "欧美市场",
+      "performance": "性能",
+      "price": "价格",
+      "quality": "质量",
+      "service": "服务",
+      "innovation": "创新",
+      "productA": "产品A",
+      "productB": "产品B"
+    },
+    "iconExample": {
+      "title": "图标列表"
+    },
+    "countToExample": {
+      "title": "数字滚动",
+      "basicUsage": "基础用法",
+      "prefixSuffix": "带前缀后缀",
+      "decimals": "带小数"
+    },
+    "clipboardExample": {
+      "title": "文本复制",
+      "copyToClipboard": "复制到剪切板",
+      "copied": "复制成功",
+      "copyFailed": "复制失败"
+    },
+    "themeSwitchExample": {
+      "title": "主题切换",
+      "animate": "是否展示动画",
+      "switch": "切换"
+    },
+    "systemUser": {
+      "username": "用户名",
+      "nickName": "昵称",
+      "email": "邮箱",
+      "phone": "手机号",
+      "isFrozen": "是否冻结",
+      "frozen": "冻结",
+      "unfrozen": "未冻结",
+      "roles": "角色",
+      "password": "密码",
+      "rules": {
+        "username": "请输入用户名",
+        "password": "请输入密码",
+        "nickName": "请输入昵称",
+        "email": "请输入邮箱",
+        "phone": "请输入手机号"
+      }
+    },
+    "systemRole": {
+      "name": "角色名称",
+      "code": "角色编码",
+      "description": "角色描述",
+      "menuPermissions": "菜单权限",
+      "featurePermissions": "功能权限",
+      "apiPermissions": "API权限",
+      "rules": {
+        "name": "请输入角色名称",
+        "code": "请输入角色编码"
+      }
+    },
+    "systemMenu": {
+      "title": "菜单名称",
+      "type": "菜单类型",
+      "icon": "菜单图标",
+      "path": "菜单路径",
+      "code": "权限标识",
+      "sort": "排序",
+      "isShow": "是否显示",
+      "description": "菜单描述",
+      "i18nKey": "国际化Key",
+      "directory": "目录",
+      "menu": "菜单",
+      "feature": "功能",
+      "show": "显示",
+      "hidden": "隐藏",
+      "parentMenu": "上级菜单",
+      "topMenu": "顶层菜单",
+      "rules": {
+        "title": "请输入名称",
+        "type": "请选择类型",
+        "path": "请输入路径"
+      }
+    },
+    "systemApi": {
+      "title": "接口名称",
+      "type": "接口类型",
+      "method": "请求方法",
+      "path": "接口路径",
+      "code": "权限标识",
+      "sort": "排序",
+      "description": "接口描述",
+      "directory": "目录",
+      "api": "API",
+      "parentApi": "上级接口",
+      "topApi": "顶层接口",
+      "rules": {
+        "title": "请输入名称",
+        "type": "请选择类型",
+        "path": "请输入路径",
+        "method": "请选择请求方法"
+      }
+    },
+    "caseFile": {
+      "fileName": "文件名",
+      "filePath": "地址",
+      "actor": "上传者",
+      "createTime": "创建时间",
+      "isFrozen": "是否冻结",
+      "action": "操作"
+    },
+    "about": {
+      "title": "关于",
+      "content": "Pure Admin 是一款功能强大且专注于用户体验的后台管理系统，拥有完全使用 Typescript 开发的前后端服务。前端 React 版本使用了React 19、Vite、Ant Design、tanstack-react-query、Unocss 等技术栈，Vue 版本使用了 Vue 3、Vite、Ant Design Vue、tanstack-vue-query 等技术栈，后端使用了 NestJS 11、Prisma 6、PostgreSQL、Redis 等技术栈。",
+      "version": "版本",
+      "projectInfo": "项目信息",
+      "projectAddress": "项目地址",
+      "dependencies": "依赖",
+      "devDependencies": "开发依赖"
+    }
+  }
+}
