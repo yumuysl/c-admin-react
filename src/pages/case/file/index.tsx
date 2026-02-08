@@ -20,7 +20,6 @@ export default function FileUpload() {
   const { t } = useTranslation()
   const { listContainerProps, tableScrollY } = useSearchTableContainer()
 
-  //TODO:文件上传 - 后端数据库创建
   //TODO:文件上传 - 后端Restful接口设计
   //TODO:文件上传 - 前后端字段协调和功能测试
 
@@ -59,19 +58,10 @@ export default function FileUpload() {
     },
     columns: [
       { title: t('page.caseFile.fileName'), dataIndex: 'fileName' },
-      { title: t('page.caseFile.filePath'), dataIndex: 'filePath' },
+      { title: t('page.caseFile.fileType'), dataIndex: 'fileType' },
+      { title: t('page.caseFile.filePath'), dataIndex: 'adress' },
       { title: t('page.caseFile.actor'), dataIndex: 'actor' },
-      { title: t('page.caseFile.createTime'), dataIndex: 'createTime' },
-      {
-        title: t('page.caseFile.isFrozen'),
-        dataIndex: 'isFrozen',
-        render: (_, record) =>
-          record.isFrozen ? (
-            <Tag color="red">{t('page.caseFile.frozen')}</Tag>
-          ) : (
-            <Tag color="green">{t('page.caseFile.unfrozen')}</Tag>
-          ),
-      },
+      { title: t('page.caseFile.createTime'), dataIndex: 'createAt' },
       {
         title: t('common.actions'),
         key: 'actions',
@@ -132,10 +122,13 @@ export default function FileUpload() {
           <SearchCol name="fileName" label={t('page.caseFile.fileName')}>
             <Input />
           </SearchCol>
+          <SearchCol name="fileType" label={t('page.caseFile.fileType')}>
+            <Input />
+          </SearchCol>
           <SearchCol name="actor" label={t('page.caseFile.actor')}>
             <Input />
           </SearchCol>
-          <SearchCol name="createTime" label={t('page.caseFile.createTime')}>
+          <SearchCol name="createAt" label={t('page.caseFile.createTime')}>
             <Input />
           </SearchCol>
         </SearchRow>

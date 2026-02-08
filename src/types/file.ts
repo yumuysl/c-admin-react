@@ -2,12 +2,11 @@ import type { BasePageParams } from './base'
 
 export interface File {
   id: number
-  name: string
-  filetype: string
-  size: number
-  actorId: number
-  createTime: string
-  updateTime: string
+  fileName: string
+  filetype: 'IMAGE' | 'VIDEO' | 'AUDIO' | 'TEXT' | 'APPLICATION'
+  size?: number
+  adress: string
+  isShow?: boolean
 }
 
 export interface FileListParams extends BasePageParams {
