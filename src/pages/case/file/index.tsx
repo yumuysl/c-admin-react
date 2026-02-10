@@ -2,7 +2,7 @@ import {
   SearchButton,
   ResetButton,
   BatchDeleteButton,
-  CreateButton,
+  UploadButton,
   DeleteButton,
   EditButton,
 } from '@/components/button'
@@ -11,7 +11,18 @@ import { Permission } from '@/components/permission'
 import { FILE } from '@/constants/permissions'
 import { useTable } from '@/hooks/useTable'
 import { useSearchTableContainer } from '@/hooks/useSearchTableContainer'
-import { Tag, Form, Space, Divider, Table, Input } from 'antd'
+import {
+  Form,
+  Space,
+  Divider,
+  Table,
+  Input,
+  Drawer,
+  Col,
+  Row,
+  Button,
+} from 'antd'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SearchTableContainer } from '@/components/container'
 import { getFileListApi, deleteFileApi, batchDeleteFileApi } from '@/apis/file'
@@ -19,12 +30,21 @@ import { getFileListApi, deleteFileApi, batchDeleteFileApi } from '@/apis/file'
 export default function FileUpload() {
   const { t } = useTranslation()
   const { listContainerProps, tableScrollY } = useSearchTableContainer()
+  const [openDrawer, setOpenDrawer] = useState(false)
 
   //TODO:文件上传 - 后端Restful接口设计
   //TODO:文件上传 - 前后端字段协调和功能测试
+  //TODO:1. 在useTable中新增handleUpload事件，触发该事件时弹出抽屉面板。2. 封装useDrawer抽屉可复用
 
   const handleDownLoad = (filepath: string) => {
     console.log('打印下载的文件名：', filepath)
+  }
+  const showDrawer = () => {
+    setOpenDrawer(true)
+  }
+
+  const onClose = () => {
+    setOpenDrawer(false)
   }
 
   const {
@@ -113,7 +133,7 @@ export default function FileUpload() {
             </Permission>
             <Divider type="vertical" />
             <Permission permission={FILE.CREATE}>
-              <CreateButton onClick={() => handleCreate()} />
+              <UploadButton onClick={() => showDrawer()} />
             </Permission>
           </>
         }
@@ -139,6 +159,26 @@ export default function FileUpload() {
   return (
     <SearchTableContainer {...listContainerProps} searchForm={searchForm}>
       <Table {...tableProps} />
+      <Drawer
+        title="文件上传"
+        onClose={onClose}
+        size="default"
+        open={openDrawer}
+        styles={{
+          body: {
+            paddingBottom: 80,
+          },
+        }}
+        extra={
+          <Space>
+            <Button onClick={onClose} type="primary">
+              返回
+            </Button>
+          </Space>
+        }
+      >
+        <Button>test</Button>
+      </Drawer>
     </SearchTableContainer>
   )
 }
