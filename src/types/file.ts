@@ -1,11 +1,12 @@
 import type { BasePageParams } from './base'
 
-export interface File {
+export interface FileContent {
   id: number
   fileName: string
   filetype: 'IMAGE' | 'VIDEO' | 'AUDIO' | 'TEXT' | 'APPLICATION'
   size?: number
   adress: string
+  file?: File
   isShow?: boolean
 }
 

@@ -11,21 +11,12 @@ import { Permission } from '@/components/permission'
 import { FILE } from '@/constants/permissions'
 import { useTable } from '@/hooks/useTable'
 import { useSearchTableContainer } from '@/hooks/useSearchTableContainer'
-import {
-  Form,
-  Space,
-  Divider,
-  Table,
-  Input,
-  Drawer,
-  Col,
-  Row,
-  Button,
-} from 'antd'
+import { Form, Space, Divider, Table, Input, Drawer, Button } from 'antd'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SearchTableContainer } from '@/components/container'
 import { getFileListApi, deleteFileApi, batchDeleteFileApi } from '@/apis/file'
+import UploadImage from '@/pages/components/UploadImage'
 
 export default function FileUpload() {
   const { t } = useTranslation()
@@ -177,7 +168,7 @@ export default function FileUpload() {
           </Space>
         }
       >
-        <Button>test</Button>
+        <UploadImage />
       </Drawer>
     </SearchTableContainer>
   )

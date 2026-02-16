@@ -42,6 +42,13 @@ export enum API {
   DELETE = 'system:api:delete',
 }
 
+export enum SYSCONFIG {
+  CREATE = 'system:sysconfig:create',
+  READ = 'system:sysconfig:read',
+  UPDATE = 'system:sysconfig:update',
+  DELETE = 'system:sysconfig:delete',
+}
+
 /**
  * 文件管理
  */

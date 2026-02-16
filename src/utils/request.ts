@@ -73,7 +73,9 @@ request.interceptors.request.use(
     const { currentLocale } = useAppStore.getState()
 
     config.headers['x-lang'] = currentLocale
-    console.log('请求拦截，打印config：', config)
+    console.log('请求拦截')
+    console.log('打印config：', config)
+    console.log('打印传输数据', config.data)
     if (config.url !== '/user/login') {
       config.headers.authorization = `Bearer ${accessToken}`
     }

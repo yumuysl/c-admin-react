@@ -68,6 +68,7 @@
     "systemRole": "Role",
     "systemMenu": "Menu",
     "systemApi": "API",
+    "sysconfig": "Config",
     "multiMenu": "Multi-level Menu",
     "multiMenu1": "Multi-level Menu 1",
     "multiMenu2": "Multi-level Menu 2",
