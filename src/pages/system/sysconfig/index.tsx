@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Button from '@/components/button/Button'
-import { Space, Typography } from 'antd'
+import { Space, Typography, message } from 'antd'
 import type { SysconfigPart } from '@/types/sysconfig'
 import { useDebounceFn } from 'ahooks'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -9,9 +9,11 @@ import {
   createSysconfig,
   updateSysconfig,
 } from '@/apis/sysconfig'
+import { number } from 'echarts'
 
 const defaultFormData: SysconfigPart = {
-  bucket: '',
+  ossBucket: '',
+  fileUploadMax: 0,
 }
 
 const { Title, Text } = Typography
@@ -22,6 +24,7 @@ export default function Sysconfig() {
   const [formData, setFormData] = useState<SysconfigPart>(defaultFormData)
   const [isEdit, setIsEdit] = useState<boolean>(false)
   const queryClient = useQueryClient()
+  const [messageApi, contextHolder] = message.useMessage()
 
   const { data, isSuccess, isError, isPending } = useQuery({
     queryKey: [cacheKey],
@@ -34,13 +37,22 @@ export default function Sysconfig() {
 
   if (isError) {
     console.log(isError)
+    messageApi.open({
+      type: 'error',
+      content: '数据加载失败，请重试',
+    })
   }
 
   if (isSuccess) {
     console.log('data', data)
-    defaultFormData.bucket = data.bucket
-    formData.bucket = data.bucket
+    defaultFormData.ossBucket = data.ossBucket
+    defaultFormData.fileUploadMax = data.fileUploadMax
   }
+
+  useEffect(() => {
+    console.log('useEffect', defaultFormData)
+    setFormData(() => defaultFormData)
+  }, [isSuccess])
 
   const updateMutation = useMutation({
     mutationFn: (values: Partial<SysconfigPart>) =>
@@ -48,6 +60,10 @@ export default function Sysconfig() {
     onSuccess: (data) => {
       console.log('修改成功', data)
       queryClient.setQueriesData({ queryKey: [cacheKey] }, data)
+      messageApi.open({
+        type: 'success',
+        content: '修改成功',
+      })
       changeMode()
     },
     onError: (err) => {
@@ -58,7 +74,16 @@ export default function Sysconfig() {
   const handleChange = (field: string, value: string) => {
     console.log('编辑', field, ':', value)
     const cloneFormData = JSON.parse(JSON.stringify(formData))
-    cloneFormData[field] = value
+
+    switch (field) {
+      case 'fileUploadMax':
+        cloneFormData[field] = Number(value)
+        break
+      case 'ossBucket':
+        cloneFormData[field] = value
+        break
+    }
+
     setFormData(cloneFormData)
   }
 
@@ -83,22 +108,35 @@ export default function Sysconfig() {
 
   return (
     <>
-      <div>
+      {contextHolder}
+      <div className="m-4">
         <Typography>
-          <Title level={3}>OSS Bucket</Title>
+          <Title level={4}>云存储OSS Bucket</Title>
           <Text
             editable={{
               maxLength: maxLength,
               editing: isEdit,
-              text: formData.bucket,
+              text: formData.ossBucket,
               triggerType: ['text'],
-              onChange: (value) => handleChange('bucket', value),
+              onChange: (value) => handleChange('ossBucket', value),
             }}
           >
-            {formData.bucket}
+            {formData.ossBucket}
+          </Text>
+          <Title level={4}>上传文件最大数量</Title>
+          <Text
+            editable={{
+              maxLength: maxLength,
+              editing: isEdit,
+              text: formData.fileUploadMax.toString(),
+              triggerType: ['text'],
+              onChange: (value) => handleChange('fileUploadMax', value),
+            }}
+          >
+            {formData.fileUploadMax}
           </Text>
         </Typography>
-        <div>
+        <div className="mt-4">
           {isEdit ? (
             <Space>
               <Button onClick={handleCancle}>取消</Button>

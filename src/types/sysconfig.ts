@@ -1,10 +1,12 @@
-export interface SysConfigAll {
+type commonType = {
   id: string
-  bucket: string
   createAt: string
   updateAt: string
 }
 
 export interface SysconfigPart {
-  bucket: string
+  fileUploadMax: number
+  ossBucket: string
 }
+
+export interface SysConfigAll extends commonType, SysconfigPart {}
